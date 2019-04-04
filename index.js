@@ -174,7 +174,7 @@ class ElectronPreferences extends EventEmitter2 {
             'backgroundColor': '#E7E7E7',
             'show': true,
             'webPreferences': this.options.webPreferences,
-            ...windowOptions
+            ...this.windowOptions
         });
 
         this.prefsWindow.loadURL(url.format({
