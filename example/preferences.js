@@ -36,6 +36,12 @@ const preferences = new ElectronPreferences({
     'webPreferences': {
         'devTools': true
     },
+    'validators': {
+        'first_name': (val) => {
+            console.log('validators');
+            return true;
+        }
+    },
     'sections': [
         {
             'id': 'about',
@@ -50,7 +56,9 @@ const preferences = new ElectronPreferences({
                                 'label': 'First Name',
                                 'key': 'first_name',
                                 'type': 'text',
-                                'help': 'What is your first name?'
+                                'help': 'What is your first name?',
+                                'validator': 'first_name',
+                                'errorMessage': 'Error!'
                             },
                             {
                                 'label': 'Last Name',

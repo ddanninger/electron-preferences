@@ -14,7 +14,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "example": "cd example && electron main.js",
-    "build": "grunt build"
+    "build": "grunt build",
+    "watch": "grunt build-watch"
   },
   "author": "Tim Ambler <tkambler@gmail.com>",
   "license": "ISC",

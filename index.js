@@ -77,6 +77,14 @@ class ElectronPreferences extends EventEmitter2 {
             event.returnValue = this.preferences;
         });
 
+        ipcMain.on('runValidator', (event, name, value) => {
+            if (this.options.validators && this.options.validators[name]) {
+                const result = this.options.validators[name](value);
+                event.returnValue = result;
+            }
+            event.returnValue = true;
+        });
+
         ipcMain.on('setPreferences', (event, value) => {
             this.preferences = value;
             this.save();
