@@ -162,7 +162,8 @@ class ElectronPreferences extends EventEmitter2 {
             return;
         }
 
-        this.prefsWindow = new BrowserWindow({
+        this.prefsWindow = new BrowserWindow(
+            Object.assign({
             'title': 'Preferences',
             'width': 800,
             'maxWidth': 800,
@@ -173,9 +174,10 @@ class ElectronPreferences extends EventEmitter2 {
             'maximizable': false,
             'backgroundColor': '#E7E7E7',
             'show': true,
-            'webPreferences': this.options.webPreferences,
-            ...this.windowOptions
-        });
+            'webPreferences': this.options.webPreferences
+            }, 
+            this.windowOptions)
+        );
 
         this.prefsWindow.loadURL(url.format({
             'pathname': path.join(__dirname, 'build/index.html'),
