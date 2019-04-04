@@ -258,6 +258,18 @@ ipcRenderer.on('preferencesUpdated', (e, preferences) => {
 ipcRenderer.sendSync('setPreferences', { ... });
 ```
 
+## BrowserWindow Settings
+
+```
+const preferences = new ElectronPreferences({
+...
+    window: {
+        icon: 'iconpath/icon'
+    }
+...
+});
+```
+
 ## Field Types
 
 The library includes built-in support for the following field types:
