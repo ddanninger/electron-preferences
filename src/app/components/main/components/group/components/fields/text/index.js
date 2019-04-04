@@ -70,10 +70,15 @@ class TextField extends React.Component {
             const result = ipcRenderer.sendSync('runValidator', this.validator, e.target.value);
             if (!result) {
                 this.hasError = true;
-                return;
+            }
+            else {
+                this.hasError = false;
             }
         }
-        this.hasError = false;
+        else {
+            this.hasError = false;
+        }
+        
         return this.props.onChange(e.target.value);
     }
 

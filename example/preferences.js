@@ -39,7 +39,7 @@ const preferences = new ElectronPreferences({
     'validators': {
         'first_name': (val) => {
             console.log('validators');
-            return true;
+            return false;
         }
     },
     'sections': [
